@@ -6,16 +6,124 @@
     <!--i know you dont need reset with bootstrap
         just linked it because it was a requirement
         in the homework description-->
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
 <body>
+  <!--mainContainer-->
+  <div class="container-fluid mainContainer border">
+    <!--instructionsContainer-->
+    <div class="row border" id="instructionsRow">
+      <!--paragraph for the instructions-->
+      <h2 id="instructionsHeader">Instuctions</h2>
+      <p id="instructionsParagraph">Select your character by clicking on
+                                    the corresponding image
+      </p>
+    </div>
+    <!--select Header-->
+    <div class="row border " id="selectHeaderRow">
+      <h1 id="mainContentSelectHeader">Select Character</h1>
+    </div>
+    <!--mainContentSelectRow-->
+    <div class="row border" id="selectRowContent">
+      <!--inside of the row will show all 4 characters-->
+      <!--squirtle-->
+      <div class="col-md-2 col-md-offset-1 character border" id="squirtle">
+        <img src="./assets/images/Squirtle.png" class="img img-responsive characterImage" alt="">
+        <!--healthBar-->
+        <div class="progress">
+          <div class="progress-bar" id="squirtleHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+            100%
+          </div>
+        </div>
+        <!--AttackInfo-->
+        <div class="attackInfoContainer row">
+          <!--attackPower-->
+          <div class="col-md-6 border attackPowerContainer">
+            <p><span id="attackText"><strong>Attack Power: </strong>20</span></p>
+          </div>
+          <!--counterAttackPower-->
+          <div class="col-md-6 border counterAttackPowerContainer">
+            <p><span id="attackText"><strong>Counter Attack: </strong>10</span></p>
+          </div>
+        </div>
+      </div>
+      <!--charmander-->
+      <div class="col-md-2 character border" id="charmander">
+        <img src="./assets/images/Charmander.png" class="img img-responsive characterImage" alt="">
+        <!--healthBar-->
+        <div class="progress">
+          <div class="progress-bar" id="charmanderHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+            100%
+          </div>
+        </div>
+        <!--AttackInfo-->
+        <div class="attackInfoContainer row">
+          <!--attackPower-->
+          <div class="col-md-6 border attackPowerContainer">
+            <p><span id="attackText"><strong>Attack Power: </strong>20</span></p>
+          </div>
+          <!--counterAttackPower-->
+          <div class="col-md-6 border counterAttackPowerContainer">
+            <p><span id="attackText"><strong>Counter Attack: </strong>10</span></p>
+          </div>
+        </div>
+      </div>
+      <!--bulbasaur-->
+      <div class="col-md-2 character border" id="bulbasaur">
+        <img src="./assets/images/bulbasaur.png" class="img img-responsive characterImage" alt="">
+        <!--healthBar-->
+        <div class="progress">
+          <div class="progress-bar" id="bulbasaurHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+            100%
+          </div>
+        </div>
+        <!--AttackInfo-->
+        <div class="attackInfoContainer row">
+          <!--attackPower-->
+          <div class="col-md-6 border attackPowerContainer">
+            <p><span id="attackText"><strong>Attack Power: </strong>20</span></p>
+          </div>
+          <!--counterAttackPower-->
+          <div class="col-md-6 border counterAttackPowerContainer">
+            <p><span id="attackText"><strong>Counter Attack: </strong>10</span></p>
+          </div>
+        </div>
+      </div>
+      <!--Pickachu-->
+      <div class="col-md-2 character border" id="pikachu">
+        <img src="./assets/images/pikachu.png" class="img img-responsive characterImage" alt="">
+        <!--healthBar-->
+        <div class="progress">
+          <div class="progress-bar" id="pikachuHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+            100%
+          </div>
+        </div>
+        <!--AttackInfo-->
+        <div class="attackInfoContainer row">
+          <!--attackPower-->
+          <div class="col-md-6 border attackPowerContainer">
+            <p><span id="attackText"><strong>Attack Power: </strong>20</span></p>
+          </div>
+          <!--counterAttackPower-->
+          <div class="col-md-6 border counterAttackPowerContainer">
+            <p><span id="attackText"><strong>Counter Attack: </strong>10</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
   <!--jQuery-->
   <script
   src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
   crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./javascript/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./assets/javascript/bootstrap.min.js"></script>
 </body>
 </html>

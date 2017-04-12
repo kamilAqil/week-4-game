@@ -8,4 +8,9 @@
 // screen with only the users character and enemy choice displayed
 // there will be two buttons, one to fight and one to run if the
 // chosen enemy is too strong. that will  link back to the enemy
-// select screen 
+// select screen
+
+
+var squirtle = {
+  
+}

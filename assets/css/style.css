@@ -1,0 +1,50 @@
+.border{
+  border: 1px solid black;
+}
+
+.mainContainer{
+  height: 600px;
+  padding-bottom: 0;
+}
+
+.character{
+  height: 52%;
+  margin-top:7%;
+  margin-right: 6%;
+}
+
+.characterImage{
+  height: 60%;
+  margin: auto;
+  margin-top: 2%;
+}
+.attackPowerContainer{
+  height: 100%;
+}
+.counterAttackPowerContainer{
+  height: 100%;
+}
+
+#attackText{
+  font-size: 84%;
+}
+
+.progress-bar{
+  width: 100%;
+}
+
+#instructionsRow{
+  height: 20%;
+}
+
+#selectHeaderRow{
+  height: 10%;
+}
+
+#selectRowContent{
+  height: 70%;
+}
+
+.attackInfoContainer{
+  height: 15%;
+}
