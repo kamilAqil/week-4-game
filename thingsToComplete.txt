@@ -1,0 +1,5 @@
+1 - Layout for character/enemy select
+2 - Layout for fight screen
+3 - create characters
+4 - work out logic for attack multiplier 
+5 - work on animations for attack and health
