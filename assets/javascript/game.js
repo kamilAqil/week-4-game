@@ -1,16 +1,25 @@
-// The game starts by prompting the user to select a character
-// from a seclection of four characters.
 
-// The screen will then promp the user to select an enemy to
-// attack from the remaining 3 characters
+var userSelection="";
+var enemySelection="";
+var characters = ['squirtle','charmander','bulbasaur','pikachu'];
 
-// Once the enemy is selected the page will change to the fight
-// screen with only the users character and enemy choice displayed
-// there will be two buttons, one to fight and one to run if the
-// chosen enemy is too strong. that will  link back to the enemy
-// select screen
-
-
-var squirtle = {
-  
-}
+  // when a character is clicked, if userSelection is not set
+  // we will assign the value based on which character was clicked
+  // if userSelection is assigned we will assign enemySelection
+  $('.character').on('click',function(){
+    if(userSelection !== "" && enemySelection !== ""){
+      console.log("all set");
+    }
+    else if(userSelection==""){
+      var name = $(this).attr("id");
+      // console.log(name);
+      userSelection = name;
+      console.log("your selection: "+userSelection);
+    }
+    else if(userSelection !== ""){
+      var name = $(this).attr("id");
+      // console.log(name);
+      enemySelection = name;
+      console.log("enemy selection: "+enemySelection);
+    }
+  });
