@@ -71,6 +71,22 @@
   position: absolute;
   top: 19%;
   left: 17%;
+  overflow: hidden;
+}
+#messageRow{
+  position: relative;
+}
+
+#confirmButton{
+  position: absolute;
+  top:26%;
+  left:45%;
+  width: 10%;
+  display: none;
+}
+
+.invisible{
+  display: none;
 }
 
 #messageContainer{
@@ -91,6 +107,7 @@
   position: absolute;
   bottom: 19%;
   right: 17%;
+  overflow: hidden;
 }
 
 #playerCharacterPic{
@@ -110,6 +127,11 @@
   font-size: 20px;
 }
 
+#enemyNametag{
+  text-align: center;
+  font-size: 20px;
+}
+
 #characterHealthBar{
   width: 100%;
   bottom: 0;
@@ -121,6 +143,20 @@
 }
 
 .stats{
-  height: 21%;
+  height: 17%;
   width: 15%;
+  position: relative;
+}
+
+#attackButton{
+  float: left
+}
+
+#runAwayButton{
+  float: right;
+}
+
+#messages{
+  height:78%;
+  margin-top: 2%;
 }

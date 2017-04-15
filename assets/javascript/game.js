@@ -44,10 +44,21 @@ $('.character').on('click',function(){
 
   var selectionName = this.id;
 
+  // this will select the enemy to attack
+  if(game.userSelection!==undefined){
+    game.userEnemySelection = game.characters[selectionName];
+    console.log("the enemy selected is "+game.userEnemySelection.name);
+      // after the userEnemySelectin is set then we will display
+      // the confirm button will display
+      $('#confirmButton').css({"display":"flex"});
+      $('#mainContentSelectHeader').html("Attack "+game.userEnemySelection.name);
+  }
+
   // if the userSelection is undefined after the
   // character click event update the userSelection with
   // the character object
   if(game.userSelection==undefined){
+    console.log(game.userSelection);
     game.userSelection = game.characters[selectionName];
     console.log("userSelection is "+game.userSelection.name);
     $('#mainContentSelectHeader').html("Select Enemy");
@@ -62,8 +73,21 @@ $('.character').on('click',function(){
     }
     console.log(game.enemies);
   }
-
 });
+
+$('#confirmButton').on('click',function(){
+  $('#selectRowContent').css({
+    "display":"none"
+  });
+  $('#fightScreen').css({
+    'display':'flex'
+  });
+  $('#confirmButton').css({
+    'display':'none'
+  });
+  setFightScreen();
+});
+
 
 
 // pass this function the name of the character(string)
@@ -71,4 +95,15 @@ $('.character').on('click',function(){
 function setHealth(character,value){
   $('#'+character+'HealthBar').html(value+"%");
   $('#'+character+'HealthBar').css("width",value);
+}
+
+
+
+// setFightScreen
+function setFightScreen(){
+  $('#playerCharacterPic').attr("src",game.userSelection.imageSource);
+  $('#selectedEnemyPic').attr("src",game.userEnemySelection.imageSource);
+  $('#characterNametag').html(game.userSelection.name);
+  $('#enemyNametag').html(game.userEnemySelection.name);
+
 }
