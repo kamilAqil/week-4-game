@@ -9,28 +9,28 @@ var game = {
       "name": "squirtle",
       "imageSource":"./assets/images/Squirtle.png",
       "health": 100,
-      "attack": 10,
+      "attack": 2,
       "counterAttack": 5
     },
     "charmander":{
       "name": "charmander",
       "imageSource":"./assets/images/Charmander.png",
       "health": 100,
-      "attack": 10,
+      "attack": 2,
       "counterAttack": 5
     },
     "bulbasaur":{
       "name": "bulbasaur",
       "imageSource":"./assets/images/bulbasaur.png",
       "health": 100,
-      "attack": 10,
+      "attack": 3,
       "counterAttack": 5
     },
     "pikachu":{
       "name": "pikachu",
       "imageSource":"./assets/images/pikachu.png",
       "health": 100,
-      "attack": 10,
+      "attack": 4,
       "counterAttack": 5
     },
   },
@@ -113,6 +113,7 @@ $('#attackButton').on('click',function(){
   game.userSelection.health -= game.userEnemySelection.counterAttack;
   console.log(game.userSelection.health);
   $('#messages').append(game.userSelection.name+" was counter attacked for : "+ game.userEnemySelection.counterAttack+"</br>");
+  game.userSelection.attack *= game.userSelection.attack;
   updateHealth();
 });
 
