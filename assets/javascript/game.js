@@ -9,29 +9,33 @@ var game = {
       "name": "squirtle",
       "imageSource":"./assets/images/Squirtle.png",
       "health": 100,
-      "attack": 2,
+      "attack": 3,
+      "attackMultiplier": 3,
       "counterAttack": 5
     },
     "charmander":{
       "name": "charmander",
       "imageSource":"./assets/images/Charmander.png",
       "health": 100,
-      "attack": 2,
-      "counterAttack": 5
+      "attack": 4,
+      "attackMultiplier": 4,
+      "counterAttack": 15
     },
     "bulbasaur":{
       "name": "bulbasaur",
       "imageSource":"./assets/images/bulbasaur.png",
       "health": 100,
-      "attack": 3,
-      "counterAttack": 5
+      "attack": 2,
+      "attackMultiplier": 2,
+      "counterAttack": 25
     },
     "pikachu":{
       "name": "pikachu",
       "imageSource":"./assets/images/pikachu.png",
       "health": 100,
-      "attack": 4,
-      "counterAttack": 5
+      "attack": 5,
+      "attackMultiplier": 5,
+      "counterAttack": 55
     },
   },
   "userSelection":undefined,
@@ -41,9 +45,7 @@ var game = {
 };
 
 $('.character').on('click',function(){
-
   var selectionName = this.id;
-
   // this will select the enemy to attack
   if(game.userSelection!==undefined){
     game.userEnemySelection = game.characters[selectionName];
@@ -62,7 +64,11 @@ $('.character').on('click',function(){
     game.userSelection = game.characters[selectionName];
     console.log("userSelection is "+game.userSelection.name);
     $('#mainContentSelectHeader').html("Select Enemy");
-    this.className = "invisible";
+    this.className += " selectedCharacter";
+    console.log(this);
+    // going to add a border around the selected
+    // character
+
     // for each character in game.characters if the character.name
     // is not == to game.userSelection.name push character to game.enemies
     // array
@@ -113,8 +119,13 @@ $('#attackButton').on('click',function(){
   game.userSelection.health -= game.userEnemySelection.counterAttack;
   console.log(game.userSelection.health);
   $('#messages').append(game.userSelection.name+" was counter attacked for : "+ game.userEnemySelection.counterAttack+"</br>");
-  game.userSelection.attack *= game.userSelection.attack;
+  game.userSelection.attack *= game.userSelection.attackMultiplier;
   updateHealth();
+
+  if(game.userEnemySelection.health <= 0){
+    winRound();
+  }
+
 });
 
 // setFightScreen
@@ -134,10 +145,16 @@ function updateHealth(){
     'width':game.userSelection.health+"%"
   });
 
+  $('#'+game.userSelection.name+'HealthBar').html(game.userSelection.health+"%");
+  $('#'+game.userSelection.name+'HealthBar').css({
+    'width':game.userSelection.health+"%"
+  });
+
   $('#enemyHealthBar').html(game.userEnemySelection.health+"%");
   $('#enemyHealthBar').css({
     'width':game.userEnemySelection.health+"%"
   });
+
 
   var characterToUpdate = game.userEnemySelection.name;
 
@@ -146,5 +163,22 @@ function updateHealth(){
   $('#'+characterToUpdate+'HealthBar').css({
     'width':game.userEnemySelection.health+"%"
   });
+
+}
+
+function winRound(){
+  $('#messages').html("YOU WIN!!");
+  $('#'+game.userEnemySelection.name).addClass('invisible');
+  game.userEnemySelection = undefined;
+
+  $('#fightScreen').css({
+    'display':'none'
+  });
+
+  $('#selectRowContent').css({
+    "display":"flex"
+  });
+
+  $('#messages').html("");
 
 }

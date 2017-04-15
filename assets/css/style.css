@@ -152,6 +152,10 @@
   float: left
 }
 
+.selectedCharacter{
+  border: 5px solid green;
+}
+
 #runAwayButton{
   float: right;
 }

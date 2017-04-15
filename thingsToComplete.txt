@@ -1,8 +1,8 @@
-1 - Layout for character/enemy select
-2 - Layout for fight screen
-3 - create characters
+1 - Layout for character/enemy select **
+2 - create a win and lose function
+3 - create a win complete game function
 4 - work out logic for attack multiplier
-5 - work on animations for attack and health
+5 - fix html for attack and counter
 
 
 create an object for game which will store values for user selection
