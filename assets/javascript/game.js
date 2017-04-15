@@ -89,23 +89,32 @@ $('#confirmButton').on('click',function(){
 });
 
 $('#runAwayButton').on('click',function(){
+
   game.userEnemySelection = undefined;
+
   $('#fightScreen').css({
     'display':'none'
   });
+
   $('#selectRowContent').css({
     "display":"flex"
   });
+
+  $('#messages').html("");
+
+  console.log(game.userEnemySelection);
+
 });
 
-// pass this function the name of the character(string)
-// to update the health bar for the corresponding character
-function setHealth(character,value){
-  $('#'+character+'HealthBar').html(value+"%");
-  $('#'+character+'HealthBar').css("width",value);
-}
-
-
+$('#attackButton').on('click',function(){
+  game.userEnemySelection.health -= game.userSelection.attack;
+  $('#messages').append(game.userEnemySelection.name+" was attacked for : "+ game.userSelection.attack+"</br>");
+  console.log(game.userEnemySelection.health);
+  game.userSelection.health -= game.userEnemySelection.counterAttack;
+  console.log(game.userSelection.health);
+  $('#messages').append(game.userSelection.name+" was counter attacked for : "+ game.userEnemySelection.counterAttack+"</br>");
+  updateHealth();
+});
 
 // setFightScreen
 function setFightScreen(){
@@ -113,5 +122,28 @@ function setFightScreen(){
   $('#selectedEnemyPic').attr("src",game.userEnemySelection.imageSource);
   $('#characterNametag').html(game.userSelection.name);
   $('#enemyNametag').html(game.userEnemySelection.name);
+  $('#enemyHealthBar').html(game.userEnemySelection.health+"%");
+  $('#enemyHealthBar').css({'width':game.userEnemySelection.health+"%"});
+}
+
+function updateHealth(){
+
+  $('#characterHealthBar').html(game.userSelection.health+"%");
+  $('#characterHealthBar').css({
+    'width':game.userSelection.health+"%"
+  });
+
+  $('#enemyHealthBar').html(game.userEnemySelection.health+"%");
+  $('#enemyHealthBar').css({
+    'width':game.userEnemySelection.health+"%"
+  });
+
+  var characterToUpdate = game.userEnemySelection.name;
+
+  $('#'+characterToUpdate+'HealthBar').html(game.userEnemySelection.health+"%");
+
+  $('#'+characterToUpdate+'HealthBar').css({
+    'width':game.userEnemySelection.health+"%"
+  });
 
 }
