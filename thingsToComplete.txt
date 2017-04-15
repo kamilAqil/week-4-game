@@ -5,8 +5,5 @@
 5 - work on animations for attack and health
 
 
-
-
-
-characters :
-  Squirtle, Charmander, Bulbasaur, Pikachu
+create an object for game which will store values for user selection
+and push the remaining characters to an array of enemy objects

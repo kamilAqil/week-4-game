@@ -8,7 +8,7 @@
 }
 
 .character{
-  height: 52%;
+  height: 66%;
   margin-top:7%;
   margin-right: 6%;
 }
@@ -20,13 +20,14 @@
 }
 .attackPowerContainer{
   height: 100%;
+  text-align: center;
 }
 .counterAttackPowerContainer{
   height: 100%;
 }
 
 #attackText{
-  font-size: 84%;
+  font-size: 16px;
 }
 
 .progress-bar{
@@ -45,6 +46,81 @@
   height: 70%;
 }
 
+#fightScreen{
+  height: 70%;
+  background-color: grey;
+  position: relative;
+  display: none;
+}
+
 .attackInfoContainer{
-  height: 15%;
+  height: 24%;
+}
+
+.backgroundWhite{
+  background-color: white;
+}
+
+#characterPic{
+  position: absolute;
+  top: 16%;
+  left: 5%;
+}
+
+#characterStats{
+  position: absolute;
+  top: 19%;
+  left: 17%;
+}
+
+#messageContainer{
+  height: 62%;
+  width: 31%;
+  position: absolute;
+  top: 19%;
+  left: 34%;
+}
+
+#enemyPic{
+  position: absolute;
+  bottom: 16%;
+  right:5%;
+}
+
+#enemyStats{
+  position: absolute;
+  bottom: 19%;
+  right: 17%;
+}
+
+#playerCharacterPic{
+  height: 95%;
+  width: 95%;
+}
+#selectedEnemyPic{
+  height: 95%;
+  width: 95%;
+}
+#characterHealthContainer{
+  position: relative;
+}
+
+#characterNametag{
+  text-align: center;
+  font-size: 20px;
+}
+
+#characterHealthBar{
+  width: 100%;
+  bottom: 0;
+}
+
+.pic{
+  height: 43%;
+  width: 11%;
+}
+
+.stats{
+  height: 21%;
+  width: 15%;
 }

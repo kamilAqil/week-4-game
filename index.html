@@ -22,10 +22,10 @@
       </p>
     </div>
     <!--select Header-->
-    <div class="row border " id="selectHeaderRow">
+    <div class="row border " id="messageRow">
       <h1 id="mainContentSelectHeader">Select Character</h1>
     </div>
-    <!--mainContentSelectRow-->
+    <!--selectRowContent-->
     <div class="row border" id="selectRowContent">
       <!--inside of the row will show all 4 characters-->
       <!--squirtle-->
@@ -114,7 +114,40 @@
       </div>
     </div>
 
+    <!--this will be the fight screen-->
+    <div class="row border" id="fightScreen">
+      <!--userCharacterPicture-->
+      <div class="border pic backgroundWhite" id="characterPic">
+        <!--this is a dummy image that will change-->
+        <img src="./assets/images/Squirtle.png" class="img img-responsive characterImage" alt="" id="playerCharacterPic">
+      </div>
+      <!--userCharacterStats-->
+      <div class="border stats backgroundWhite container" id="characterStats">
+        <div class="row border" id="characterNametag">
+          name
+        </div>
+        <div class="row border" id="charcterHealthContainer">
+          <div class="progress">
+            <div class="progress-bar" id="characterHealthBar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+              100%
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--messageContainer this will give the user a selection of
+      two buttons and will update the user about the actions inside of this div-->
+      <div class="border backgroundWhite" id="messageContainer">
 
+      </div>
+      <!--currentEnemyPic-->
+      <div class="border pic backgroundWhite" id="enemyPic">
+        <img src="./assets/images/Charmander.png" class="img img-responsive characterImage" alt="" id="selectedEnemyPic">
+      </div>
+      <!--currentEnemyStats-->
+      <div class="border stats backgroundWhite" id="enemyStats">
+
+      </div>
+    </div>
   </div>
 
 
