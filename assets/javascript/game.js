@@ -62,7 +62,7 @@ $('.character').on('click',function(){
     game.userSelection = game.characters[selectionName];
     console.log("userSelection is "+game.userSelection.name);
     $('#mainContentSelectHeader').html("Select Enemy");
-
+    this.className = "invisible";
     // for each character in game.characters if the character.name
     // is not == to game.userSelection.name push character to game.enemies
     // array
@@ -88,7 +88,15 @@ $('#confirmButton').on('click',function(){
   setFightScreen();
 });
 
-
+$('#runAwayButton').on('click',function(){
+  game.userEnemySelection = undefined;
+  $('#fightScreen').css({
+    'display':'none'
+  });
+  $('#selectRowContent').css({
+    "display":"flex"
+  });
+});
 
 // pass this function the name of the character(string)
 // to update the health bar for the corresponding character
